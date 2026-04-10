@@ -78,9 +78,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
+  const url = `https://locaposting.com/blog/${slug}`;
   return {
-    title: `${post.meta.title} | 로카포스팅`,
+    title: post.meta.title,
     description: post.meta.description,
+    openGraph: {
+      title: post.meta.title,
+      description: post.meta.description,
+      type: "article",
+      url,
+      locale: "ko_KR",
+      siteName: "로카포스팅",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.meta.title,
+      description: post.meta.description,
+    },
+    alternates: {
+      canonical: url,
+    },
   };
 }
 
@@ -125,8 +142,30 @@ export default async function BlogPostPage({
     .filter((p) => p.slug !== slug && p.category === meta.category)
     .slice(0, 3);
 
+  const blogJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: meta.title,
+    description: meta.description,
+    datePublished: meta.date,
+    author: {
+      "@type": "Organization",
+      name: "로카포스팅",
+      url: "https://locaposting.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "로카포스팅",
+    },
+    mainEntityOfPage: `https://locaposting.com/blog/${slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <Header />
       <main className="flex-1">
         <article className="py-12 sm:py-16">
