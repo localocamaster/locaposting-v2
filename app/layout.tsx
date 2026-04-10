@@ -47,6 +47,16 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://locaposting.com",
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
+  },
+  other: {
+    "theme-color": "#111111",
+    "apple-mobile-web-app-capable": "yes",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
   },
   robots: {
     index: true,
