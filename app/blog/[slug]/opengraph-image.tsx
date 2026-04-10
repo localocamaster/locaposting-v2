@@ -7,6 +7,30 @@ export const alt = "로카포스팅 블로그";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// 의미 단위 줄바꿈 맵: 제목을 보기 좋게 나누기
+const titleLines: Record<string, string[]> = {
+  "blog-press-marketing-guide": ["블로그 기자단 마케팅이란?", "효과부터 진행 방식까지 완벽 정리"],
+  "blog-marketing-by-industry": ["업종별 블로그 마케팅 전략:", "병원, 맛집, 인테리어부터 학원까지"],
+  "blog-vs-instagram-marketing": ["블로그 마케팅 vs 인스타그램 마케팅:", "우리 업종엔 뭐가 맞을까?"],
+  "blog-marketing-cost": ["블로그 마케팅 대행 비용,", "얼마가 적정한가요? 2026년 시세 총정리"],
+  "blog-marketing-performance": ["블로그 마케팅 성과 측정법:", "순위 확인부터 매출 연결까지"],
+  "blog-marketing-failure-reasons": ["블로그 마케팅 실패하는", "5가지 이유와 해결법"],
+  "naver-smart-block-guide": ["네이버 스마트블록 완벽 가이드:", "2026년 검색 결과 구조와 노출 전략"],
+  "naver-crank-dia-algorithm": ["네이버 C-Rank와 D.I.A 알고리즘:", "블로그 상위노출의 핵심 원리"],
+  "naver-seo-checklist": ["네이버 블로그 상위노출", "체크리스트 20가지 (2026년 최신판)"],
+  "naver-place-blog-synergy": ["네이버 플레이스와", "블로그 마케팅 시너지 전략"],
+  "naver-homefeed-strategy": ["네이버 홈피드 노출 전략:", "검색 외 유입 채널 만들기"],
+  "naver-blog-quality-prevention": ["네이버 블로그 저품질 예방법:", "원인, 증상, 탈출 방법 총정리"],
+  "search-trend-2026": ["2026년 검색 트렌드 변화:", "사장님이 알아야 할 5가지"],
+  "ai-search-era-marketing": ["AI 검색 시대,", "블로그 마케팅은 여전히 유효한가?"],
+  "eeat-content-strategy": ["E-E-A-T 콘텐츠 전략:", "전문성으로 검색 순위 올리는 법"],
+  "geo-strategy-guide": ["GEO(생성형 엔진 최적화) 전략 가이드:", "AI 검색에서 살아남는 법"],
+  "small-business-marketing-start": ["사장님을 위한 온라인 마케팅", "입문 가이드 (2026년판)"],
+  "keyword-selection-guide": ["마케팅 키워드 선정법:", "검색량부터 경쟁도 분석까지"],
+  "marketing-quote-checklist": ["마케팅 대행 견적서 체크리스트:", "바가지 안 쓰는 7가지 확인 포인트"],
+  "marketing-channel-selection": ["블로그, 인스타, 광고…", "우리 업종에 맞는 마케팅 채널은?"],
+};
+
 const categoryColors: Record<string, string> = {
   "블로그 마케팅": "#dc2626",
   "네이버 SEO": "#2563eb",
@@ -105,15 +129,26 @@ export default async function Image({
           {/* Title */}
           <div
             style={{
-              fontSize: "52px",
-              fontWeight: 700,
-              color: "white",
-              lineHeight: 1.3,
-              letterSpacing: "-0.5px",
-              maxWidth: "900px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "4px",
+              maxWidth: "1000px",
             }}
           >
-            {post.title}
+            {(titleLines[slug] || [post.title]).map((line, i) => (
+              <div
+                key={i}
+                style={{
+                  fontSize: "52px",
+                  fontWeight: 700,
+                  color: "white",
+                  lineHeight: 1.3,
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                {line}
+              </div>
+            ))}
           </div>
         </div>
 
