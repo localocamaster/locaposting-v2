@@ -1,4 +1,6 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "fs/promises";
+import { join } from "path";
 import { getAllPosts } from "@/lib/blog";
 
 export const alt = "로카포스팅 블로그";
@@ -25,12 +27,19 @@ export default async function Image({
   const allPosts = getAllPosts();
   const post = allPosts.find((p) => p.slug === slug);
 
+  const fontBold = await readFile(
+    join(process.cwd(), "fonts/PretendardBold.otf")
+  );
+  const fontRegular = await readFile(
+    join(process.cwd(), "fonts/PretendardRegular.otf")
+  );
+
   if (!post) {
     return new ImageResponse(
-      <div style={{ width: "100%", height: "100%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: "32px" }}>
+      <div style={{ width: "100%", height: "100%", background: "#111", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontSize: "32px", fontFamily: "Pretendard" }}>
         로카포스팅
       </div>,
-      { ...size }
+      { ...size, fonts: [{ name: "Pretendard", data: fontBold, weight: 700, style: "normal" as const }] }
     );
   }
 
@@ -47,6 +56,7 @@ export default async function Image({
           justifyContent: "space-between",
           padding: "60px 80px",
           background: "#111111",
+          fontFamily: "Pretendard",
           position: "relative",
           overflow: "hidden",
         }}
@@ -82,7 +92,7 @@ export default async function Image({
                 background: color,
                 color: "white",
                 fontSize: "18px",
-                fontWeight: 600,
+                fontWeight: 700,
               }}
             >
               {post.category}
@@ -96,7 +106,7 @@ export default async function Image({
           <div
             style={{
               fontSize: "52px",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "white",
               lineHeight: 1.3,
               letterSpacing: "-0.5px",
@@ -141,7 +151,7 @@ export default async function Image({
             <span
               style={{
                 fontSize: "22px",
-                fontWeight: 600,
+                fontWeight: 700,
                 color: "#e5e7eb",
               }}
             >
@@ -166,6 +176,12 @@ export default async function Image({
         />
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        { name: "Pretendard", data: fontBold, weight: 700, style: "normal" },
+        { name: "Pretendard", data: fontRegular, weight: 400, style: "normal" },
+      ],
+    }
   );
 }

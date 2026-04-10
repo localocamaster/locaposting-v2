@@ -1,11 +1,19 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
-export const runtime = "edge";
 export const alt = "로카포스팅 | 블로그 기자단 포스팅 + 구글 색인 서비스";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const fontBold = await readFile(
+    join(process.cwd(), "fonts/PretendardBold.otf")
+  );
+  const fontRegular = await readFile(
+    join(process.cwd(), "fonts/PretendardRegular.otf")
+  );
+
   return new ImageResponse(
     (
       <div
@@ -17,6 +25,7 @@ export default async function Image() {
           justifyContent: "center",
           alignItems: "center",
           background: "linear-gradient(135deg, #ffffff 0%, #fef2f2 50%, #fff1f2 100%)",
+          fontFamily: "Pretendard",
           position: "relative",
           overflow: "hidden",
         }}
@@ -85,7 +94,7 @@ export default async function Image() {
           <div
             style={{
               fontSize: "64px",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "#111111",
               letterSpacing: "-1px",
             }}
@@ -95,7 +104,7 @@ export default async function Image() {
           <div
             style={{
               fontSize: "64px",
-              fontWeight: 800,
+              fontWeight: 700,
               letterSpacing: "-1px",
               display: "flex",
             }}
@@ -152,6 +161,12 @@ export default async function Image() {
         />
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [
+        { name: "Pretendard", data: fontBold, weight: 700, style: "normal" },
+        { name: "Pretendard", data: fontRegular, weight: 400, style: "normal" },
+      ],
+    }
   );
 }
