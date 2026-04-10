@@ -32,7 +32,17 @@ export default function Comparison() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
-            서비스 <span className="text-red-600">비교</span>
+            서비스{" "}
+            <span className="relative inline-block text-red-600">
+              비교
+              <motion.span
+                className="absolute left-0 bottom-0 h-[3px] bg-red-600/30 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
+            </span>
           </h2>
           <p className="mt-4 text-muted text-lg">
             왜 로카포스팅이 다른지, 한눈에 비교하세요.

@@ -42,7 +42,7 @@ export default function FinalCTA() {
               href="https://open.kakao.com/o/sIrZYA5h"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2.5 h-14 rounded-xl bg-[#FEE500] text-[#000000] text-sm font-semibold hover:bg-[#FDD835] transition-all shadow-sm hover:shadow-md"
+              className="group relative flex items-center justify-center gap-2.5 h-14 rounded-xl bg-[#FEE500] text-[#000000] text-sm font-semibold hover:bg-[#FDD835] transition-all shadow-sm hover:shadow-lg hover:shadow-[#FEE500]/30"
             >
               <MessageSquare className="w-5 h-5" />
               카카오톡으로 문의하기
@@ -54,7 +54,7 @@ export default function FinalCTA() {
               href="https://t.me/localoca_official"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-2.5 h-14 rounded-xl bg-[#0088CC] text-white text-sm font-semibold hover:bg-[#0077B5] transition-all shadow-sm hover:shadow-md"
+              className="group relative flex items-center justify-center gap-2.5 h-14 rounded-xl bg-[#0088CC] text-white text-sm font-semibold hover:bg-[#0077B5] transition-all shadow-sm hover:shadow-lg hover:shadow-[#0088CC]/30"
             >
               <Send className="w-5 h-5" />
               텔레그램으로 문의하기

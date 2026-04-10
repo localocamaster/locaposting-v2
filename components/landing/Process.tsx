@@ -42,7 +42,16 @@ export default function Process() {
         >
           <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground">
             주문부터 검색 노출까지,{" "}
-            <span className="text-red-600">4단계면 끝</span>
+            <span className="relative inline-block text-red-600">
+              4단계면 끝
+              <motion.span
+                className="absolute left-0 bottom-0 h-[3px] bg-red-600/30 rounded-full"
+                initial={{ width: 0 }}
+                whileInView={{ width: "100%" }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              />
+            </span>
           </h2>
           <p className="mt-4 text-muted text-lg">
             간단한 상담 한 번이면 바로 시작됩니다.
