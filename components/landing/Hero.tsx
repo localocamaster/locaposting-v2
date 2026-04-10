@@ -33,7 +33,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.15]"
         >
-          블로그 포스팅부터
+          블로그 포스팅부터{" "}
           <br />
           <span className="text-red-600">구글 노출</span>까지, 한 번에
         </motion.h1>
