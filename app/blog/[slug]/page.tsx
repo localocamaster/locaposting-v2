@@ -142,23 +142,49 @@ export default async function BlogPostPage({
     .filter((p) => p.slug !== slug && p.category === meta.category)
     .slice(0, 3);
 
-  const blogJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: meta.title,
-    description: meta.description,
-    datePublished: meta.date,
-    author: {
-      "@type": "Organization",
-      name: "로카포스팅",
-      url: "https://locaposting.com",
+  const blogJsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: meta.title,
+      description: meta.description,
+      datePublished: meta.date,
+      author: {
+        "@type": "Organization",
+        name: "로카포스팅",
+        url: "https://locaposting.com",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "로카포스팅",
+      },
+      mainEntityOfPage: `https://locaposting.com/blog/${slug}`,
     },
-    publisher: {
-      "@type": "Organization",
-      name: "로카포스팅",
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "홈",
+          item: "https://locaposting.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "블로그",
+          item: "https://locaposting.com/blog",
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: meta.title,
+          item: `https://locaposting.com/blog/${slug}`,
+        },
+      ],
     },
-    mainEntityOfPage: `https://locaposting.com/blog/${slug}`,
-  };
+  ];
 
   return (
     <>
