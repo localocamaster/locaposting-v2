@@ -8,7 +8,7 @@ const steps = [
     icon: PenTool,
     step: "01",
     title: "키워드 & 패키지 선택",
-    description: "타겟 키워드와 원하는 패키지를 선택하고 바로 결제하세요.",
+    description: "타겟 키워드와 원하는 패키지를 상담을 통해 선택하세요.",
   },
   {
     icon: Search,
@@ -26,7 +26,7 @@ const steps = [
     icon: CheckCircle,
     step: "04",
     title: "노출 확인",
-    description: "네이버·구글 검색 결과에 노출. 대시보드에서 상태 확인.",
+    description: "네이버·구글 검색 결과에 노출. 결과 리포트를 전달해드립니다.",
   },
 ];
 
