@@ -118,7 +118,8 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
-  const { meta, sections } = post;
+  const { meta } = post;
+  const sections = post.sections as Section[];
   const allPosts = getAllPosts();
   const related = allPosts
     .filter((p) => p.slug !== slug && p.category === meta.category)

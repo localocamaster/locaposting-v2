@@ -45,7 +45,7 @@ export default function Process() {
             <span className="text-red-600">4단계면 끝</span>
           </h2>
           <p className="mt-4 text-muted text-lg">
-            복잡한 상담 없이, 클릭 몇 번으로 시작하세요.
+            간단한 상담 한 번이면 바로 시작됩니다.
           </p>
         </motion.div>
 

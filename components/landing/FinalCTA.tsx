@@ -61,27 +61,6 @@ export default function FinalCTA() {
               <ArrowRight className="w-4 h-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
             </a>
 
-            {/* Divider */}
-            <div className="relative my-2">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-border" />
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-muted">
-                  또는 바로 주문하기
-                </span>
-              </div>
-            </div>
-
-            {/* Self-order CTA */}
-            <a
-              href="/order/select"
-              className="group flex items-center justify-center gap-2.5 h-14 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 transition-all shadow-sm hover:shadow-md"
-            >
-              상담 없이 바로 주문
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </a>
-
             {/* Operating Hours */}
             <div className="bg-surface rounded-xl p-4 text-center mt-2">
               <div className="flex items-center justify-center gap-2 mb-1.5">

@@ -42,7 +42,7 @@ export default function Hero() {
         >
           블로그 기자단이 작성하고, 구글 공식 API로 검색 등록까지.
           <br className="hidden sm:block" />
-          상담 없이 바로 주문하세요.
+          간편하게 시작하세요.
         </motion.p>
 
         {/* Price Hook */}

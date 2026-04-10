@@ -347,7 +347,7 @@ function PostIllustration({ slug, c }: { slug: string; c: { primary: string; sec
           <rect x="196" y="141" width="60" height="3" rx="1.5" fill="white" opacity="0.07" />
           <rect x="196" y="153" width="25" height="10" rx="5" fill={c.primary} opacity="0.1" />
           {/* 피드 카드 3 (잘림) */}
-          <rect x="188" y="180" width="104" height="55" rx="6" fill={c.primary} opacity="0.04" stroke={c.primary} strokeWidth="0.8" opacity="0.15" />
+          <rect x="188" y="180" width="104" height="55" rx="6" fill={c.primary} fillOpacity="0.04" stroke={c.primary} strokeWidth="0.8" strokeOpacity="0.15" />
           <rect x="196" y="188" width="50" height="4" rx="2" fill={c.primary} opacity="0.2" />
           <rect x="196" y="198" width="85" height="3" rx="1.5" fill="white" opacity="0.06" />
           {/* 장식 — 추천 표시 */}
