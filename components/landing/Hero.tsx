@@ -46,7 +46,7 @@ export default function Hero() {
           className="mt-6 text-xl sm:text-2xl text-muted max-w-2xl mx-auto leading-relaxed"
         >
           블로그 기자단이 작성하고, 구글 공식 API로 검색 등록까지.
-          <br className="hidden sm:block" />
+          <br />
           간편하게 시작하세요.
         </motion.p>
 
