@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] rounded-full bg-orange-200/20 blur-[100px] animate-blob animation-delay-2000" />
       <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full bg-rose-100/25 blur-[80px] animate-blob animation-delay-4000" />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-16 sm:pb-24 text-center">
+      <div className="relative max-w-5xl mx-auto px-5 sm:px-6 pt-16 sm:pt-32 pb-14 sm:pb-24 text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -31,7 +31,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.15]"
+          className="text-[2.5rem] sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-foreground leading-[1.15]"
         >
           블로그 포스팅부터{" "}
           <br />
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-8 inline-flex items-center gap-3 text-3xl sm:text-4xl font-bold"
+          className="mt-8 inline-flex items-center gap-2 sm:gap-3 text-2xl sm:text-4xl font-bold"
         >
           <span className="text-muted line-through decoration-red-500 decoration-2">
             월 300만원
