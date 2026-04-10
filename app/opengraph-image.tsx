@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "fs/promises";
 import { join } from "path";
 
-export const alt = "로카포스팅 | 블로그 기자단 포스팅 + 구글 색인 서비스";
+export const alt = "로카포스팅 | 마케팅 서비스 블로그 기자단 및 포스팅 대행";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
